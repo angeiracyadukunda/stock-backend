@@ -62,7 +62,7 @@ const productSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["available", "borrowed", "damaged", "disposed"],
+      enum: ["Available", "Borrowed", "Damaged", "Disposed"],
       required: true,
     },
     currentBorrower: { type: mongoose.Schema.Types.ObjectId, ref: "Borrower" },
