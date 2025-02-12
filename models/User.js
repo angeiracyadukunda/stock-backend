@@ -10,7 +10,9 @@ const userSchema = new mongoose.Schema({
     enum: ["inventoryManager", "programManager", "admin"],
     default: "programManager",
   },
-});
+} );
+
+// Encrypt password before saving
 
 // Hash password before saving
 userSchema.pre("save", async function (next) {

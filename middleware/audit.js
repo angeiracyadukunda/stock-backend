@@ -12,4 +12,4 @@ module.exports = (action) => {
     await log.save();
     next();
   };
-}; 
+};
