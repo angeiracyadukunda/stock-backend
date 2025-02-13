@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 require("dotenv").config();
@@ -11,7 +10,6 @@ require("./services/overdueChecker");
 
 const app = express();
 app.use(express.json());
-app.use("/uploads", express.static("uploads"));
 app.use(cors());
 // MongoDB Connection
 mongoose
