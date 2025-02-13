@@ -1,6 +1,5 @@
 const express = require("express");
 const productController = require("../controllers/productController");
-const upload = require("../middleware/upload");
 const { authenticate, authorize } = require("../middleware/auth");
 
 const router = express.Router();
@@ -224,7 +223,6 @@ router.post(
   "/products",
   authenticate,
   authorize("admin"),
-  upload.single("image"),
   productController.createProduct
 );
 
@@ -232,7 +230,7 @@ router.put(
   "/products/:id",
   authenticate,
   authorize("admin"),
-  upload.single("image"),
+ 
   productController.updateProduct
 );
 
