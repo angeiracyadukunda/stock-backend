@@ -7,8 +7,7 @@ require("dotenv").config();
 const productRoutes = require("./routes/productRoutes");
 const authRoutes = require("./routes/authRoutes");
 require("./services/overdueChecker");
-const swaggerUi = require("swagger-ui-express");
-const specs = require("./swagger");
+
 
 const app = express();
 app.use(express.json());
@@ -27,8 +26,7 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api", productRoutes);
 
-// Add after other middleware
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+
 
 // Add error handling middleware
 app.use((err, req, res, next) => {
